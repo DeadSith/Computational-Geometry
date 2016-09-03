@@ -5,10 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:T1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="630">
     <DockPanel>
-        <DockPanel DockPanel.Dock="Top">
-        </DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock MinWidth="100" Grid.Row="0">
+                Напрямок:
+            </TextBlock>
+            <ComboBox x:Name="DirectionBox" MinWidth="100" Grid.Column="1" Grid.Row="0">
+                <ComboBoxItem>
+                    Однонаправлений
+                </ComboBoxItem>
+                <ComboBoxItem IsSelected="True">
+                    Різнонаправлений
+                </ComboBoxItem>
+            </ComboBox>
+            <TextBlock MinWidth="100" Grid.Column="0" Grid.Row="1">
+                Швидкість(пікселів в секунду) першого кола:
+            </TextBlock>
+            <TextBox x:Name="C1Box" MinWidth="100" Grid.Column="1" Grid.Row="1">
+                100
+            </TextBox>
+            <TextBlock MinWidth="100" Grid.Row="1" Grid.Column="2">
+                Швидкість другого кола
+            </TextBlock>
+            <TextBox x:Name="C2Box" MinWidth="100" Grid.Column="3" Grid.Row="1">
+                70
+            </TextBox>
+            <Button x:Name="BeginButton" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" MinWidth="100" Click="BeginButton_Click">
+                Почати
+            </Button>
+            <TextBlock MinWidth="100" Grid.Column="0" Grid.Row="2">
+                Радіус першого кола:
+            </TextBlock>
+            <TextBox x:Name="C1RadiusBox" MinWidth="100" Grid.Column="1" Grid.Row="2">
+                20
+            </TextBox>
+            <TextBlock MinWidth="100" Grid.Row="2" Grid.Column="2">
+                Радіус другого кола
+            </TextBlock>
+            <TextBox x:Name="C2RadiusBox" MinWidth="100" Grid.Column="3" Grid.Row="2">
+                20
+            </TextBox>
+        </Grid>
         <Canvas DockPanel.Dock="Top" x:Name="DrawCanvas" Loaded="DrawCanvas_Loaded" />
     </DockPanel>
 </Window>
