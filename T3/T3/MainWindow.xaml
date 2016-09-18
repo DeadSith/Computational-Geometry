@@ -1,0 +1,29 @@
+﻿<Window x:Class="T3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:T3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="FindButton" IsEnabled="False" Grid.Column="0" Grid.Row="0" Width="92" Click="FindButton_Click">
+                Знайти перетин
+            </Button>
+            <Button x:Name="AddShapeButton"  Grid.Column="1" Grid.Row="0" Click="AddShapeButton_Click">
+                Додати першу фігуру
+            </Button>
+        </Grid>
+        <Canvas DockPanel.Dock="Top" x:Name="DrawCanvas" MouseUp="DrawCanvas_MouseUp" MinWidth="100" MinHeight="100"/>
+    </DockPanel>
+</Window>

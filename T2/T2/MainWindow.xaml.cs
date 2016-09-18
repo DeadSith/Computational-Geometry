@@ -59,10 +59,10 @@ namespace T2
             FractalCanvas.Source = _wb;
             var re = double.Parse(ReText.Text);
             var im = double.Parse(ImText.Text);
-            DrawFractal(new Complex(re,im));
+            DrawFractal(new Complex(re,im), new Complex(1,3));
         }
 
-        private void DrawFractal(Complex z, Complex lambda = default(Complex))
+        private void DrawFractal(Complex z, Complex lambdaInput = default(Complex))
         {
             var zOriginal = new Complex(z);
             for (var y = 0; y < _yCentre*2; y++)
@@ -70,8 +70,11 @@ namespace T2
                 for (var x = 0; x < _xCentre*2; x++)
                 {
                     var n = 0;
+                    var lambda = new Complex();
                     lambda.Re = (x-_xCentre) * 0.01 + 1;
                     lambda.Im = (y-_yCentre) * 0.01;
+                    /*lambda.Re = (x - _xCentre) * (lambdaInput.Re/100)+1;
+                    lambda.Im = (y - _yCentre) * (lambdaInput.Im/100);*/
                     z = new Complex(zOriginal);
                     while ((z.Re*z.Re+z.Im*z.Im<_endValue)&&(n<_maxIterations))
                     {
