@@ -16,12 +16,20 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Button x:Name="FindButton" IsEnabled="False" Grid.Column="0" Grid.Row="0" Width="92" Click="FindButton_Click">
                 Знайти перетин
             </Button>
             <Button x:Name="AddShapeButton"  Grid.Column="1" Grid.Row="0" Click="AddShapeButton_Click">
                 Додати першу фігуру
+            </Button>
+            <Button x:Name="AddInner"  Grid.Column="2" Grid.Row="0" Click="AddInner_Click">
+                Додати додати внутрішню частину
+            </Button>
+            <Button x:Name="ClearButton"  Grid.Column="3" Grid.Row="0" Click="ClearButton_Click">
+                Очистити
             </Button>
         </Grid>
         <Canvas DockPanel.Dock="Top" x:Name="DrawCanvas" MouseUp="DrawCanvas_MouseUp" MinWidth="100" MinHeight="100"/>
