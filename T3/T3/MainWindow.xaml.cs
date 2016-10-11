@@ -86,7 +86,12 @@ namespace T3
         private void FindButton_Click(object sender, RoutedEventArgs e)
         {
             //Якщо за годинниковою стрілкою, то сама верхня завжде іде першою
+            //var prevCount = Shape1.Count;
             AddIntersections(ref Shape1, ref Shape2);
+            /*if (prevCount == Shape1.Count)
+            {
+                
+            }*/
             var sCopy = new List<ShapePoint>(Shape1);
             foreach (var point in Shape1)
             {
